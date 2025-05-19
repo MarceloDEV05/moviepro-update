@@ -30,22 +30,22 @@ export const Header = () => {
                   </button>
 
                  {menu && (
-                     <div className="absolute right-5 top-12 bg-white  p-2">
-                    <ul className="cursor-pointer pb-2 ">
-                             <li>
+                     <div className="absolute w-30 right-0 top-16 rounded-b shadow-lg bg-white ease-in-out duration-300 transition-all  p-2">
+                    <ul className="cursor-pointer mt-4 pb-2">
+                             <li className="mb-5">
                             <Link to='/'>
                                 Home
                             </Link>
                         </li>
-                        <li>
+                        <li className="mb-5">
                             <Link to='/filmes'>
                                 Filmes
                             </Link>
                         </li>
-                        <li>
+                        <li className="mb-5">
                             <Link to='/series'>Series</Link>
                         </li>
-                        <li>
+                        <li className="mb-5">
                             <Link to='/faviritos'>
                                 Meus Filmes
                             </Link>

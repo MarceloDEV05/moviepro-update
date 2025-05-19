@@ -54,7 +54,7 @@ export const Home = () => {
                         key={filme.id}
                     >
 
-                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[500px] hover:scale-105 relative"
+                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[500px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
