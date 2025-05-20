@@ -78,19 +78,19 @@ export const Series = () => {
             <h1 className="mt-10 ml-10 font-medium text-3xl">
                 Series Populares
             </h1>
-            <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-6 p-4">
+            <main className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-3 p-2">
                 {series.map((serie) => (
                 <Link to={`/detalhesserie/${serie.id}`}>
                     <section className="w-full pt-2 flex items-center justify-center"
                         key={serie.id}
                     >
 
-                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[500px] hover:scale-105 "
+                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`}
                                 alt=""
-                                className='w-full h-100  object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30'
+                                className='w-full h-80  object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30'
                             />
 
                             <div className="absolute bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
@@ -121,19 +121,19 @@ export const Series = () => {
             <h1 className="mt-20 ml-10 font-medium text-3xl">
                 Series em Alta
             </h1>
-            <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-6 p-6">
+            <main className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-3 p-2">
                 {seriesAlta.map((serie) => (
                     <Link to={`/detalhesserie/${serie.id}`}>
                     <section className="w-full pt-2 flex items-center justify-center"
                         key={serie.id}
                     >
 
-                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[500px] hover:scale-105 "
+                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`}
                                 alt=""
-                                className='w-full h-100  object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30'
+                                className='w-full h-80  object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30'
                             />
 
                             <div className="absolute bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">

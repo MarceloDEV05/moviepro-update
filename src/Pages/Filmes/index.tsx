@@ -19,7 +19,7 @@ export const Filmes = () => {
             })
 
             //busca novos filmes e adiciona na lista sem apagar os ja listados
-            setAllFilmes((prev) => [...prev, ...response.data.results.slice(0,20)])
+            setAllFilmes((prev) => [...prev, ...response.data.results.slice(0,8)])
         }
 
         useEffect(() => {
@@ -42,22 +42,22 @@ export const Filmes = () => {
     return(
         <div>
             <h1 className="mt-10 mb-10 text-3xl text-center font-medium">Todos os Filmes</h1>
-            <main className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 px-6">
+            <main className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-3 p-2">
               {allFilmes.map((filme) => (
                 <Link to={`/detalhesfilme/${filme.id}`}>
                   <section key={filme.id} className="flex items-center justify-center">
-                    <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[500px] hover:scale-105 mb-2">
+                    <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs lg:h-[500px] h-[400px] hover:scale-105">
                         <img 
                         src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} 
                         alt="" 
-                        className="w-full h-100  object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30"
+                        className="w-full h-80 lg:h-100  object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30"
                         />
 
-                        <div className="absolute bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
+                        <div className="absolute  bottom-30 lg:bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
                             <h1 className="text-white text-xl font-medium px-4">{filme.title}</h1>
                             <p className="text-gray-300 line-clamp-4 overflow-hidden mx-5">{filme.overview}</p>
                         </div>
-                        <button className="bg-gray-800 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors hover:bg-gray-950">
+                        <button className="bg-gray-800 text-white font-semibold p-2 rounded-b-lg transition-colors hover:bg-gray-950">
                             Acessar
                         </button>
                     </article>

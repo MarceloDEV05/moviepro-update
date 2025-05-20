@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { type FilmesProps } from "../Home"
 import api from "../../Services/api"
 
@@ -7,6 +7,7 @@ import api from "../../Services/api"
 export const Details = () => {
     const[movieDetail, setMovieDetail] = useState<FilmesProps>()
     const { id } = useParams()
+
 
     useEffect(() => {
         const getDetails = async() => {
@@ -22,6 +23,8 @@ export const Details = () => {
 
         getDetails()
     },[id])
+
+
     return(
         <div>
             <main className=" lg:px-50  w-full h-screen flex justify-center ">
@@ -48,8 +51,13 @@ export const Details = () => {
                          
 
                          <div className="flex mx-4 gap-5 mb-20">
+                           
                             <button className="cursor-pointer bg-green-500 text-white p-2 w-30 hover:bg-green-700 transition duration-300 rounded-md">Salvar</button>
-                            <button className="cursor-pointer bg-gray-800 text-white p-2 w-30 hover:bg-gray-950 transition duration-300 rounded-md">Trailer</button>
+
+                             <a target="_blank" rel="external" href={`https://youtube.com/results?search_query=${movieDetail.title} trailer`}>
+                            <button  className="cursor-pointer bg-gray-800 text-white p-2 w-30 hover:bg-gray-950 transition duration-300 rounded-md">Trailer</button>
+                            </a>
+                            
                          </div>
                     </section>
                 )}
