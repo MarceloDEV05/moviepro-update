@@ -3,6 +3,7 @@ import { Layout } from "./components/Layout";
 import { Home } from "./Pages/Home";
 import { Filmes } from "./Pages/Filmes";
 import { Favoritos } from "./Pages/Favoritos";
+import { Series } from "./Pages/Series";
 
 export const router = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ export const router = createBrowserRouter([
             {
                 path: '/filmes',
                 element:<Filmes/>
+            },
+            {
+                path: '/series',
+                element:<Series/>
             },
 
             {
