@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import api from "../../Services/api";
+import { Link } from "react-router-dom";
 
 export interface FilmesProps {
     id: number;
     title: string;
     vote_average: number;
     poster_path: string;
+    backdrop_path: string;
     overview: string;
 }
 
@@ -50,10 +52,11 @@ export const Home = () => {
             </h1>
             <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-6 p-6">
                 {filmes.map((filme) => (
+                    <Link to={`/detalhesfilme/${filme.id}`}>
                     <section className="w-full pt-5 flex items-center justify-center"
                         key={filme.id}
                     >
-
+        
                         <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[500px] hover:scale-105 "
                         >
                             <img
@@ -73,11 +76,14 @@ export const Home = () => {
                                 
                             </div>
 
+                            
                             <button className="cursor-pointer bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
                                 Acessar
                             </button>
+                             
                         </article>
                     </section>
+                    </Link>
                 ))}
             </main>
 
@@ -89,6 +95,7 @@ export const Home = () => {
             </h1>
             <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-6 p-6">
                 {filmesAlta.map((emAlta) => (
+                    <Link to={`/detalhesfilme/${emAlta.id}`}>
                     <section className="w-full pt-5 flex items-center justify-center"
                         key={emAlta.id}
                     >
@@ -117,6 +124,7 @@ export const Home = () => {
                             </button>
                         </article>
                     </section>
+                    </Link>
                 ))}
             </main>
 

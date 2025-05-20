@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { type FilmesProps } from "../Home";
 import api from "../../Services/api";
+import { Link } from "react-router-dom";
 
 // Filmes populares: /movie/popular
 
@@ -79,6 +80,7 @@ export const Series = () => {
             </h1>
             <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-6 p-4">
                 {series.map((serie) => (
+                <Link to={`/detalhesserie/${serie.id}`}>
                     <section className="w-full pt-2 flex items-center justify-center"
                         key={serie.id}
                     >
@@ -107,6 +109,7 @@ export const Series = () => {
                             </button>
                         </article>
                     </section>
+                    </Link>
                 ))}  
             </main>
             <button
@@ -120,6 +123,7 @@ export const Series = () => {
             </h1>
             <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-6 p-6">
                 {seriesAlta.map((serie) => (
+                    <Link to={`/detalhesserie/${serie.id}`}>
                     <section className="w-full pt-2 flex items-center justify-center"
                         key={serie.id}
                     >
@@ -148,6 +152,7 @@ export const Series = () => {
                             </button>
                         </article>
                     </section>
+                    </Link>
                 ))}
             </main>
 

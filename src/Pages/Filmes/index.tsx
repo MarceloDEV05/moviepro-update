@@ -1,5 +1,6 @@
 import api from "../../Services/api"
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 import { type FilmesProps } from "../Home"
 
 export const Filmes = () => {
@@ -43,6 +44,7 @@ export const Filmes = () => {
             <h1 className="mt-10 mb-10 text-3xl text-center font-medium">Todos os Filmes</h1>
             <main className="grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4 px-6">
               {allFilmes.map((filme) => (
+                <Link to={`/detalhesfilme/${filme.id}`}>
                   <section key={filme.id} className="flex items-center justify-center">
                     <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[500px] hover:scale-105 mb-2">
                         <img 
@@ -60,6 +62,7 @@ export const Filmes = () => {
                         </button>
                     </article>
                 </section>
+                </Link>
               ))}
             </main>
              <button 

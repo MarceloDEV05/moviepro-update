@@ -4,6 +4,8 @@ import { Home } from "./Pages/Home";
 import { Filmes } from "./Pages/Filmes";
 import { Favoritos } from "./Pages/Favoritos";
 import { Series } from "./Pages/Series";
+import { Details } from "./Pages/Details";
+import { SeriesDetails } from "./Pages/SeriesDetails";
 
 export const router = createBrowserRouter([
     {
@@ -25,7 +27,17 @@ export const router = createBrowserRouter([
             {
                 path: '/favoritos',
                 element: <Favoritos/>
-            }
+            },
+            
+            {
+                path: '/detalhesfilme/:id/',
+                element: <Details/>
+            },
+            {
+                path: '/detalhesserie/:id/',
+                element: <SeriesDetails/>
+            },
+
         ]
     }
 ])
