@@ -105,7 +105,7 @@ export const Home = () => {
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${emAlta.poster_path}`}
                                 alt=""
-                                className='w-full h-80  object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30'
+                                className='w-full h-80 lg:h-100 object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30'
                             />
 
                             <div className="absolute bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
