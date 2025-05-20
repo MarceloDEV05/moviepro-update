@@ -13,7 +13,7 @@ export const Details = () => {
             const response = await api.get(`/movie/${id}`,{
                 params: {
                 api_key: "a440320973db39fc00de6bdcb4604c9b",
-                Language:'pt-BR',
+                language:'pt-BR',
                 }
             })
            
