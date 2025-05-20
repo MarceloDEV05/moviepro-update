@@ -77,9 +77,9 @@ export const Series = () => {
             <h1 className="mt-10 ml-10 font-medium text-3xl">
                 Series Populares
             </h1>
-            <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-6 p-6">
+            <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-6 p-4">
                 {series.map((serie) => (
-                    <section className="w-full pt-5 flex items-center justify-center"
+                    <section className="w-full pt-2 flex items-center justify-center"
                         key={serie.id}
                     >
 
@@ -102,7 +102,7 @@ export const Series = () => {
                                 
                             </div>
 
-                            <button className="cursor-pointer bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
+                            <button className="cursor-pointer bg-gray-800 hover:bg-gray-950 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
                                 Acessar
                             </button>
                         </article>
@@ -111,16 +111,16 @@ export const Series = () => {
             </main>
             <button
              onClick={loadMore}
-             className="bg-green-500 font-bold text-white p-2 rounded-lg float-right mr-20 mb-10">Carregar mais...</button>
+             className="bg-green-500 hover:bg-green-700 font-bold text-white p-2 rounded-lg float-right mr-20 mb-10">Carregar mais...</button>
 
 
 
-            <h1 className="mt-10 ml-10 font-medium text-3xl">
+            <h1 className="mt-20 ml-10 font-medium text-3xl">
                 Series em Alta
             </h1>
             <main className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-6 p-6">
                 {seriesAlta.map((serie) => (
-                    <section className="w-full pt-5 flex items-center justify-center"
+                    <section className="w-full pt-2 flex items-center justify-center"
                         key={serie.id}
                     >
 
@@ -153,7 +153,7 @@ export const Series = () => {
 
             <button 
             onClick={loadMoreSeries}
-             className="bg-green-500 font-bold text-white p-2 rounded-lg float-right mr-20 mb-10">Carregar mais...</button>
+             className="bg-green-500 hover:bg-green-700 font-bold text-white p-2 rounded-lg float-right mr-20 mb-10">Carregar mais...</button>
         </div>
     )
 }
