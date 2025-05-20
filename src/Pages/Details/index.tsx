@@ -27,25 +27,25 @@ export const Details = () => {
             <main className="w-full h-screen flex justify-center">
                 {movieDetail && (
                     <section key={movieDetail?.id} 
-                    className="flex w-full h-full flex-col gap-5 px-5 mt-20 justify-center mb-10 px-40"
+                    className=""
                     >
-                        <article className="flex flex-col items-center w-full justify-center mt-10">
-                            <h1 className="mb-5 font-medium text-2xl">{movieDetail?.title}</h1>
+                        <article className="">
+                            <h1 className="mb-5 font-medium text-2xl text-center mt-5">{movieDetail?.title}</h1>
                           <img src={`https://image.tmdb.org/t/p/original/${movieDetail?.backdrop_path}`} alt="" 
-                          className="rounded-lg w-full h-140 sm:w-full"
+                          className=" px-5 rounded-lg w-full h-auto"
                           />
                         </article>
                          
-                         <div className="ml-2 flex w-full flex-col justify-center">
-                            <h2 className="font-bold text-gray-700 mb-2">Sinopse:</h2>
-                            <p className="justify-center flex md:text-center sm:text-center">{movieDetail?.overview}</p>
+                         <div className="px-5 py-5">
+                            <h2 className="text-xl font-medium">Sinopse:</h2>
+                            <p className="line-clamp-6 overflow-hidden mb-2">{movieDetail?.overview}</p>
                             <strong className="text-green-700">Avaliações: {movieDetail?.vote_average.toFixed(1)}/10</strong>
                          </div>
                          
 
-                         <div className="flex gap-10 mb-20">
-                            <button className="bg-green-500 text-white p-2 w-30 hover:bg-green-700 transition duration-300">Salvar</button>
-                            <button className="bg-gray-800 text-white p-2 w-30 hover:bg-gray-950 transition duration-300">Trailer</button>
+                         <div className="flex mx-4 gap-5 mb-20">
+                            <button className="cursor-pointer bg-green-500 text-white p-2 w-30 hover:bg-green-700 transition duration-300 rounded-md">Salvar</button>
+                            <button className="cursor-pointer bg-gray-800 text-white p-2 w-30 hover:bg-gray-950 transition duration-300 rounded-md">Trailer</button>
                          </div>
                     </section>
                 )}
