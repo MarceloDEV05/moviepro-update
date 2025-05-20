@@ -32,13 +32,13 @@ export const Details = () => {
                         <article className="flex flex-col items-center w-full justify-center mt-10">
                             <h1 className="mb-5 font-medium text-2xl">{movieDetail?.title}</h1>
                           <img src={`https://image.tmdb.org/t/p/original/${movieDetail?.backdrop_path}`} alt="" 
-                          className="rounded-lg w-300 h-140"
+                          className="rounded-lg w-full h-140 sm:w-full"
                           />
                         </article>
                          
                          <div className="ml-2 flex w-full flex-col justify-center">
                             <h2 className="font-bold text-gray-700 mb-2">Sinopse:</h2>
-                            <p className="w-200">{movieDetail?.overview}</p>
+                            <p className="justify-center flex md:text-center sm:text-center">{movieDetail?.overview}</p>
                             <strong className="text-green-700">Avaliações: {movieDetail?.vote_average.toFixed(1)}/10</strong>
                          </div>
                          
