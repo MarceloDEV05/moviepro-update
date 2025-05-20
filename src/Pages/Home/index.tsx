@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import api from "../../Services/api";
 
-interface FilmesProps {
+export interface FilmesProps {
     id: number;
     title: string;
     vote_average: number;
@@ -30,7 +30,7 @@ export const Home = () => {
 
     useEffect(() => {
         const getFilmesEmAlta = async() => {
-            const response = await api.get("/movie/popular",{
+            const response = await api.get("/trending/movie/day",{
                 params: {
                     api_key: "a440320973db39fc00de6bdcb4604c9b",
                     language: "pt-BR",
