@@ -24,15 +24,15 @@ export const Details = () => {
     },[id])
     return(
         <div>
-            <main className="w-full h-screen flex justify-center">
+            <main className=" lg:px-50  w-full h-screen flex justify-center ">
                 {movieDetail && (
                     <section key={movieDetail?.id} 
-                    className=""
+                    className="px-10"
                     >
                         <article className="">
                             <h1 className="mb-5 font-medium text-2xl text-center mt-5">{movieDetail?.title}</h1>
                           <img src={`https://image.tmdb.org/t/p/original/${movieDetail?.backdrop_path}`} alt="" 
-                          className=" px-5 rounded-lg w-full h-auto"
+                          className="rounded-lg w-full h-auto"
                           />
                         </article>
                          
