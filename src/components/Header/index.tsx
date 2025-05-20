@@ -20,6 +20,7 @@ export const Header = () => {
     const openMenu = () => setMenu(open => !open)
     
     useEffect(() => {
+        //recebe um evento do mouse como tipagem
         const outClick = (e: MouseEvent) => {
             if(menuRef.current && !menuRef.current.contains(e.target as Node)){
                 setMenu(false)
