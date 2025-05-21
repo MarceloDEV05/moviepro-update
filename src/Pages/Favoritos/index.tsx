@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { type FilmesProps } from "../Home"
-
+import {toast} from 'react-toastify'
 export const Favoritos = () => {
     const [savedMovies, setSavedMovies] = useState<FilmesProps[]>([])
 
@@ -9,6 +9,18 @@ export const Favoritos = () => {
         const myMovies = localStorage.getItem('@moviepro')
         setSavedMovies(myMovies ? JSON.parse(myMovies) : [])
     },[])
+
+    const deleteMovie = (id:number) => {
+        let filterMovies = savedMovies.filter((filme) => {
+            return(
+                filme.id !== id
+            )
+        })
+
+        setSavedMovies(filterMovies)
+        localStorage.setItem('@moviepro', JSON.stringify(filterMovies))
+        toast.success('Filme removido dos favoritos')
+    }
 
     return(
         <div>
@@ -33,7 +45,7 @@ export const Favoritos = () => {
                             <p className="text-gray-700 line-clamp-3 overflow-hidden w-[300px] lg:w-[600px]  italic">{movieList.overview}</p>
                         </div>
 
-                        <button className="bg-gray-800 text-white p-2 rounded w-20">excluir</button>
+                        <button onClick={() => deleteMovie(movieList.id)} className="bg-gray-800 text-white p-2 rounded w-20">excluir</button>
                        </section>
                     </li>
                 ))}

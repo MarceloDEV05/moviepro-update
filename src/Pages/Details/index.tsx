@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { Link, useNavigate, useParams } from "react-router-dom"
 import { type FilmesProps } from "../Home"
 import api from "../../Services/api"
+import { toast } from "react-toastify"
 
 
 export const Details = () => {
@@ -17,12 +18,12 @@ export const Details = () => {
         const hasMovie = savedMovies.some((savedMovie: { id: number }) => savedMovie.id === movieDetail?.id)
 
         if(hasMovie){
-            alert('filme ja existe em sua lista')
+            toast.warn('filme ja existe em sua lista')
             return
         }
         savedMovies.push(movieDetail)
         localStorage.setItem('@moviepro', JSON.stringify(savedMovies))
-        alert('filme salvo com sucesso')
+        toast.success('filme salvo com sucesso')
     }
 
     useEffect(() => {
