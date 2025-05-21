@@ -7,7 +7,7 @@ import { ToastContainer} from 'react-toastify'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ToastContainer autoClose={2000}  position='top-center' toastStyle={{backgroundColor:'#000', color: '#fff'}}/>
+    <ToastContainer autoClose={1500}  position='top-center' toastStyle={{backgroundColor:'#000', color: '#fff'}}/>
     <RouterProvider router={router} />
   </StrictMode>,
 )
