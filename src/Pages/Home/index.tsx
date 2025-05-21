@@ -70,7 +70,7 @@ export const Home = () => {
                                 className='w-full h-80 lg:h-100 object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30'
                             />
 
-                            <div className="absolute bottom-20 lg:bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
+                            <div className="absolute bottom-30 lg:bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
 
                                 <h1 className="text-lg text-white font-medium px-4 ">
                                     {filme.title}
