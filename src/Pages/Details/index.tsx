@@ -69,7 +69,7 @@ export const Details = () => {
                                 <><p>Filme sem sinopse disponivel!</p></>
                             )}
                             
-                            <p className="line-clamp-6 overflow-hidden mb-2">{movieDetail?.overview}</p>
+                            <p className="line-clamp-6 mb-2">{movieDetail?.overview}</p>
                             <strong className="text-green-700">Avaliações: {movieDetail?.vote_average.toFixed(1)}/10</strong>
                          </div>
                          
