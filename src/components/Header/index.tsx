@@ -59,9 +59,9 @@ export const Header = () => {
                {mobile? (
                 <div ref={menuRef} className="flex gap-2 items-center">
 
-                      <div className="flex gap-2 items-center mr-10">
+                      <div className="flex gap-2 items-center px-4">
                     <input type="search" placeholder="Pesquise por filmes..."
-                    className="bg-white rounded p-1 outline-none w-40 overflow-ellipsis"
+                    className="bg-white rounded p-1 outline-none w-full max-w-md px-4 overflow-ellipsis transition-all lg:w-90"
                     value={input}
                     onChange={ (e) => setInput(e.target.value)}
                     />
