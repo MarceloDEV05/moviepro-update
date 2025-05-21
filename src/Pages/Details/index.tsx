@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { Link, useParams } from "react-router-dom"
+import { Link, useNavigate, useParams } from "react-router-dom"
 import { type FilmesProps } from "../Home"
 import api from "../../Services/api"
 
@@ -7,18 +7,41 @@ import api from "../../Services/api"
 export const Details = () => {
     const[movieDetail, setMovieDetail] = useState<FilmesProps>()
     const { id } = useParams()
+    const navigate = useNavigate()
 
+    const saveMovie = () => {
+        const myMovies: string|null = localStorage.getItem('@moviepro')
+
+        let savedMovies = myMovies ? JSON.parse(myMovies) : []
+
+        const hasMovie = savedMovies.some((savedMovie: { id: number }) => savedMovie.id === movieDetail?.id)
+
+        if(hasMovie){
+            alert('filme ja existe em sua lista')
+            return
+        }
+        savedMovies.push(movieDetail)
+        localStorage.setItem('@moviepro', JSON.stringify(savedMovies))
+        alert('filme salvo com sucesso')
+    }
 
     useEffect(() => {
         const getDetails = async() => {
-            const response = await api.get(`/movie/${id}`,{
+         await api.get(`/movie/${id}`,{
                 params: {
                 api_key: "a440320973db39fc00de6bdcb4604c9b",
                 language:'pt-BR',
                 }
             })
-           
+           .then((response) => {
             setMovieDetail(response.data)
+           })
+           .catch(()=> {
+            console.log('filme nao encontrado')
+            navigate('/', {replace: true})
+            return;
+           })
+            
         }
 
         getDetails()
@@ -52,7 +75,9 @@ export const Details = () => {
 
                          <div className="flex mx-4 gap-5 mb-20">
                            
-                            <button className="cursor-pointer bg-green-500 text-white p-2 w-30 hover:bg-green-700 transition duration-300 rounded-md">Salvar</button>
+                            <button
+                            onClick={saveMovie}
+                            className="cursor-pointer bg-green-500 text-white p-2 w-30 hover:bg-green-700 transition duration-300 rounded-md">Salvar</button>
 
                              <a target="_blank" rel="external" href={`https://youtube.com/results?search_query=${movieDetail.title} trailer`}>
                             <button  className="cursor-pointer bg-gray-800 text-white p-2 w-30 hover:bg-gray-950 transition duration-300 rounded-md">Trailer</button>

@@ -85,18 +85,18 @@ export const Series = () => {
                         key={serie.id}
                     >
 
-                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] hover:scale-105 "
+                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] lg:h-[500px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`}
                                 alt=""
-                                className='w-full h-80  object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30'
+                                className='w-full h-80 lg:h-100 object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30'
                             />
 
                             <div className="absolute bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
 
                                 <h1 className="text-lg text-white font-medium px-4 truncate ">
-                                    {serie.title}
+                                    {serie.name}
                                 </h1>
                                 <p className="text-gray-300 line-clamp-4 overflow-hidden mx-5">
                                  {serie.overview}
@@ -139,7 +139,7 @@ export const Series = () => {
                             <div className="absolute bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
 
                                 <h1 className="text-lg text-white font-medium px-4 truncate ">
-                                    {serie.title}
+                                    {serie.name}
                                 </h1>
                                 <p className="text-gray-300 line-clamp-4 overflow-hidden mx-5">
                                  {serie.overview}
