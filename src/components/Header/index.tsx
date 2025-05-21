@@ -59,7 +59,7 @@ export const Header = () => {
                             <Link to='/series'>Series</Link>
                         </li>
                         <li className="mb-5">
-                            <Link to='/faviritos'>
+                            <Link to='/favoritos'>
                                 Meus Filmes
                             </Link>
                         </li>
