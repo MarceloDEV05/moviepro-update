@@ -50,18 +50,18 @@ export const Header = () => {
 
     return(
         <header 
-        className="w-full h-16 px-8 justify-between  items-center flex bg-gray-700 lg:justify-around fixed top-0 left-0 z-50">
+        className="w-full h-16 px-4 justify-between  items-center flex bg-gray-700 lg:justify-around fixed top-0 left-0 z-50">
             <h1 className="text-3xl text-white">
                 <Link to='/'>
                 Movie<strong className="text-green-500">PRO</strong>
                 </Link>
                 </h1>
                {mobile? (
-                <div ref={menuRef} className="flex gap-5 items-center">
+                <div ref={menuRef} className="flex gap-2 items-center">
 
-                      <div className="flex gap-2 items-center">
+                      <div className="flex gap-2 items-center mr-10">
                     <input type="search" placeholder="Pesquise por filmes..."
-                    className="bg-white rounded p-1 outline-none"
+                    className="bg-white rounded p-1 outline-none w-40 overflow-ellipsis"
                     value={input}
                     onChange={ (e) => setInput(e.target.value)}
                     />
