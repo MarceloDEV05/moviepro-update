@@ -80,9 +80,9 @@ export const Series = () => {
             </h1>
             <main className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-3 p-2">
                 {series.map((serie) => (
-                <Link to={`/detalhesserie/${serie.id}`}>
+                <Link to={`/detalhesserie/${serie.id}`} key={serie.id}>
                     <section className="w-full pt-2 flex items-center justify-center"
-                        key={serie.id}
+                        
                     >
 
                         <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] lg:h-[500px] hover:scale-105 "
@@ -104,9 +104,9 @@ export const Series = () => {
                                 
                             </div>
 
-                            <button className="cursor-pointer bg-gray-800 hover:bg-gray-950 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
-                                Acessar
-                            </button>
+                            <div className="cursor-pointer bg-gray-800 hover:bg-gray-950 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
+                               <h2 className="text-center">Acessar</h2>
+                            </div>
                         </article>
                     </section>
                     </Link>
@@ -123,7 +123,7 @@ export const Series = () => {
             </h1>
             <main className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-3 p-2">
                 {seriesAlta.map((serie) => (
-                    <Link to={`/detalhesserie/${serie.id}`}>
+                    <Link to={`/detalhesserie/${serie.id}`} key={serie.id}>
                     <section className="w-full pt-2 flex items-center justify-center"
                         key={serie.id}
                     >
@@ -147,9 +147,9 @@ export const Series = () => {
                                 
                             </div>
 
-                            <button className="cursor-pointer bg-gray-800 hover:bg-gray-950 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
-                                Acessar
-                            </button>
+                            <div className="cursor-pointer bg-gray-800 hover:bg-gray-950 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
+                               <h2 className="text-center">Acessar</h2>
+                            </div>
                         </article>
                     </section>
                     </Link>

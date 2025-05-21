@@ -22,7 +22,7 @@ export const SeriesDetails = () => {
     },[id])
     return(
         <div>
-            <main className=" lg:px-50 flex w-full justify-center h-screen">
+            <main className="lg:px-50 flex w-full justify-center h-screen">
                 {serieDetail && (
                     <section key={serieDetail?.id} className="px-10">
                         <article>

@@ -1,11 +1,27 @@
-import { Link } from "react-router-dom"
-import { useState, useEffect,useRef } from "react"
-import { FaBars } from "react-icons/fa"
+import { Link, type FormEncType } from "react-router-dom"
+import { useState, useEffect,useRef, type FormEvent } from "react"
+import { FaBars, FaSearch } from "react-icons/fa"
+
+import { useContext } from "react"
+import { MovieContext } from "../MovieContext"
+
 
 export const Header = () => {
     const [mobile, setMobile] = useState(false)
     const [menu, setMenu] = useState(false)
     const menuRef = useRef<HTMLDivElement | null>(null)
+
+
+    const [input, setInput] = useState('')
+    const { searchMovie } = useContext(MovieContext)
+
+    const movieSearch = (e:FormEvent) => {
+        e.preventDefault()
+        if(input){
+            searchMovie(input)
+        }
+        setInput('')
+    }
 
     useEffect(() => {
         const screenMobile = window.matchMedia('(max-width: 640px)');
@@ -34,16 +50,34 @@ export const Header = () => {
 
     return(
         <header 
-        className="w-full h-16 justify-around items-center flex bg-gray-700">
-            <h1 className="text-3xl text-white">Movie<strong className="text-green-500">PRO</strong></h1>
+        className="w-full h-16 px-8 justify-between  items-center flex bg-gray-700 lg:justify-around fixed top-0 left-0 z-50">
+            <h1 className="text-3xl text-white">
+                <Link to='/'>
+                Movie<strong className="text-green-500">PRO</strong>
+                </Link>
+                </h1>
                {mobile? (
-                <div ref={menuRef}>
+                <div ref={menuRef} className="flex gap-5 items-center">
+
+                      <div className="flex gap-2 items-center">
+                    <input type="search" placeholder="Pesquise por filmes..."
+                    className="bg-white rounded p-1 outline-none"
+                    value={input}
+                    onChange={ (e) => setInput(e.target.value)}
+                    />
+                    <button onClick={movieSearch}>
+                        <FaSearch color="#fff"/>
+                    </button>
+                    </div>
+
                   <button onClick={openMenu}  className=" cursor-pointer text-white ">
                     <FaBars/>
                   </button>
 
+                     
+
                  {menu && (
-                     <div className="absolute w-30 right-0 top-16 rounded-b shadow-lg bg-white ease-in-out duration-300 transition-all  p-2">
+                     <div className="absolute w-30 right-0 top-16 rounded-b shadow-lg bg-white ease-in-out duration-300 transition  p-2">
                     <ul className="cursor-pointer mt-4 pb-2">
                              <li className="mb-5">
                             <Link to='/'>
@@ -85,6 +119,18 @@ export const Header = () => {
                             <Link to='/series'>Series</Link>
                         </li>
                     </ul>
+
+                    <div className="flex gap-2">
+                    <input type="search" placeholder="Pesquise por filmes..."
+                    className="bg-white rounded p-1 outline-none"
+                    value={input}
+                    onChange={ (e) => setInput(e.target.value)}
+                    />
+                    <button onClick={movieSearch}>
+                        <FaSearch color="#fff"/>
+                    </button>
+                    </div>
+
                     <Link to='/favoritos'>
                         <button className="cursor-pointer bg-green-500 p-1 rounded-md text-white font-bold">Meus Filmes</button>
                     </Link>

@@ -51,7 +51,7 @@ export const Details = () => {
 
     return(
         <div>
-            <main className=" lg:px-50  w-full h-screen flex justify-center ">
+            <main className=" lg:px-50 mt-20 w-full h-screen flex justify-center ">
                 {movieDetail && (
                     <section key={movieDetail?.id} 
                     className="px-10"
@@ -69,7 +69,7 @@ export const Details = () => {
                                 <><p>Filme sem sinopse disponivel!</p></>
                             )}
                             
-                            <p className="line-clamp-8 mb-2">{movieDetail?.overview}</p>
+                            <p className=" mb-2">{movieDetail?.overview}</p>
                             <strong className="text-green-700">Avaliações: {movieDetail?.vote_average.toFixed(1)}/10</strong>
                          </div>
                          

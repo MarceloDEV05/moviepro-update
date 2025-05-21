@@ -44,8 +44,8 @@ export const Filmes = () => {
             <h1 className="mt-10 mb-10 text-3xl text-center font-medium">Todos os Filmes</h1>
             <main className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-3 p-2">
               {allFilmes.map((filme) => (
-                <Link to={`/detalhesfilme/${filme.id}`}>
-                  <section key={filme.id} className="flex items-center justify-center">
+                <Link to={`/detalhesfilme/${filme.id}`} key={filme.id}>
+                  <section className="flex items-center justify-center">
                     <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs lg:h-[500px] h-[400px] hover:scale-105">
                         <img 
                         src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`} 
@@ -57,9 +57,9 @@ export const Filmes = () => {
                             <h1 className="text-white text-xl font-medium px-4">{filme.title}</h1>
                             <p className="text-gray-300 line-clamp-4 overflow-hidden mx-5">{filme.overview}</p>
                         </div>
-                        <button className="bg-gray-800 text-white font-semibold p-2 rounded-b-lg transition-colors hover:bg-gray-950">
-                            Acessar
-                        </button>
+                        <div className="bg-gray-800 text-white font-semibold p-2 rounded-b-lg transition-colors hover:bg-gray-950">
+                            <h2 className="text-center">Acessar</h2>
+                        </div>
                     </article>
                 </section>
                 </Link>
