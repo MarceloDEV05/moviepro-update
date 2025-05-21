@@ -30,7 +30,7 @@ export const Favoritos = () => {
 
                         <div>
                             <h1 className="font-medium text-2xl">{movieList.title}</h1>
-                            <p className="text-gray-700 line-clamp-3 overflow-hidden w-[400px] lg:w-[600px]  italic">{movieList.overview}</p>
+                            <p className="text-gray-700 line-clamp-4 overflow-hidden w-[400px] lg:w-[600px]  italic">{movieList.overview}</p>
                         </div>
 
                         <button className="bg-gray-800 text-white p-2 rounded w-20">excluir</button>
