@@ -1,4 +1,4 @@
-import { Link, type FormEncType } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useState, useEffect,useRef, type FormEvent } from "react"
 import { FaBars, FaSearch } from "react-icons/fa"
 
@@ -17,8 +17,8 @@ export const Header = () => {
 
     const movieSearch = (e:FormEvent) => {
         e.preventDefault()
-        if(input){
-            searchMovie(input)
+        if(input.trim()){
+            searchMovie(input.trim())
         }
         setInput('')
     }
@@ -59,16 +59,16 @@ export const Header = () => {
                {mobile? (
                 <div ref={menuRef} className="flex gap-2 items-center">
 
-                      <div className="flex gap-2 items-center px-4">
+                    <form onSubmit={movieSearch} className="flex gap-2 items-center px-4">
                     <input type="search" placeholder="Pesquise por filmes..."
                     className="bg-white rounded p-1 outline-none w-full max-w-md px-4 overflow-ellipsis transition-all lg:w-90"
                     value={input}
                     onChange={ (e) => setInput(e.target.value)}
                     />
-                    <button onClick={movieSearch}>
+                    <button type="submit">
                         <FaSearch color="#fff"/>
                     </button>
-                    </div>
+                    </form>
 
                   <button onClick={openMenu}  className=" cursor-pointer text-white ">
                     <FaBars/>
@@ -120,16 +120,16 @@ export const Header = () => {
                         </li>
                     </ul>
 
-                    <div className="flex gap-2">
+                    <form onSubmit={movieSearch} className="flex gap-2">
                     <input type="search" placeholder="Pesquise por filmes..."
                     className="bg-white rounded p-1 outline-none"
                     value={input}
                     onChange={ (e) => setInput(e.target.value)}
                     />
-                    <button onClick={movieSearch}>
+                    <button type="submit">
                         <FaSearch color="#fff"/>
                     </button>
-                    </div>
+                    </form>
 
                     <Link to='/favoritos'>
                         <button className="cursor-pointer bg-green-500 p-1 rounded-md text-white font-bold">Meus Filmes</button>

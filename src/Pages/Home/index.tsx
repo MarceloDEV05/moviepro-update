@@ -53,8 +53,8 @@ export const Home = () => {
     return (
         <div>
             {movie && movie.length > 0 && (
-                <div>
-                    <h1>Resultados da Busca</h1>
+                <div className="mt-30">
+                    <h1 className="px-8 font-medium text-2xl italic">Resultados da Busca</h1>
                     <main className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full  lg:min-h-screen gap-3 p-2">
                     {movie.map((filme) => (
                     <Link to={`/detalhesfilme/${filme.id}`} key={filme.id}>
@@ -94,7 +94,7 @@ export const Home = () => {
                 </div>
             )}
 
-            <h1 className="mt-10 ml-10 font-medium text-3xl">
+            <h1 className="mt-30 ml-10 font-medium text-3xl">
                 Filmes em Cartaz
             </h1>
             <main className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full  lg:min-h-screen gap-3 p-2">
