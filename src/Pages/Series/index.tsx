@@ -74,7 +74,7 @@ export const Series = () => {
 
 
     return(
-        <div>
+        <div className="mt-30">
             <h1 className="mt-10 ml-10 font-medium text-3xl">
                 Series Populares
             </h1>
