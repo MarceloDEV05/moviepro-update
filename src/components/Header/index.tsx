@@ -50,14 +50,14 @@ export const Header = () => {
 
     return(
         <header 
-        className="fixed w-full h-16 top-0 left-0 z-50 text-black bg-gray-900 flex justify-between      md:justify-around items-center px-4 gap-5">
+        className="fixed w-full h-16 top-0 left-0 z-50 text-black bg-gray-900 flex justify-between  md:justify-around items-center px-4 gap-5">
               <h1 className="text-2xl text-white">
                 <Link to='/'>
                 Movie<strong className="text-green-500">PRO</strong>
                 </Link>
                 </h1>
 
-                  <form onSubmit={movieSearch} className="flex gap-2 items-center">
+                  <form onSubmit={movieSearch} className="flex gap-2 justify-center text-center content-center items-center">
                     <input type="search" placeholder="Pesquise por filmes..."
                     className="bg-white rounded p-1 w-32 outline-none overflow-hidden transition-all placeholder:text-gray-700"
                     value={input}
@@ -71,7 +71,7 @@ export const Header = () => {
                     {mobile? (
                 <div ref={menuRef} className="flex w-full gap-2 items-center">
 
-                  <button onClick={openMenu}  className=" cursor-pointer text-white float-right">
+                  <button onClick={openMenu}  className="absolute cursor-pointer text-white right-0">
                     <FaBars/>
                   </button>
 
