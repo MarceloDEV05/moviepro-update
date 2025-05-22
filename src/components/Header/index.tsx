@@ -50,18 +50,19 @@ export const Header = () => {
 
     return(
         <header 
-        className="w-full h-16 px-4 justify-between items-center flex bg-gray-900 lg:justify-around fixed top-0 left-0 z-50">
-            <h1 className="text-3xl text-white">
+        className="flex p-4 gap-9 top-0 w-full h-16 bg-gray-900 lg:justify-around justify-between items-center fixed z-50">
+              <h1 className="text-3xl text-white">
                 <Link to='/'>
                 Movie<strong className="text-green-500">PRO</strong>
                 </Link>
                 </h1>
-               {mobile? (
-                <div ref={menuRef} className="flex gap-2 items-center">
 
-                    <form onSubmit={movieSearch} className="flex gap-2 items-center px-4">
+                    {mobile? (
+                <div ref={menuRef} className="flex w-full gap-2 items-center">
+
+                    <form onSubmit={movieSearch} className="flex w-full gap-2 items-center">
                     <input type="search" placeholder="Pesquise por filmes..."
-                    className="bg-white rounded p-1 outline-none w-30 px-4 overflow-ellipsis transition-all text-black lg:w-90 placeholder:text-gray-600"
+                    className="bg-white rounded p-1 w-43 outline-none overflow-ellipsis transition-all placeholder:text-gray-700"
                     value={input}
                     onChange={ (e) => setInput(e.target.value)}
                     />
@@ -70,14 +71,12 @@ export const Header = () => {
                     </button>
                     </form>
 
-                  <button onClick={openMenu}  className=" cursor-pointer text-white ">
+                  <button onClick={openMenu}  className=" cursor-pointer text-white float-right">
                     <FaBars/>
                   </button>
 
-                     
-
-                 {menu && (
-                     <div className="absolute w-30 right-0 top-16 rounded-b shadow-lg bg-white ease-in-out duration-300 transition text-black  p-2">
+                    {menu && (
+                     <div className="absolute right-0 text-black top-16 rounded-b shadow-lg bg-white ease-in-out duration-300 transition  p-2">
                     <ul className="cursor-pointer mt-4 pb-2">
                              <li className="mb-5">
                             <Link to='/'>
@@ -103,7 +102,7 @@ export const Header = () => {
                  )}
                   </div>
                ):(
-                <>
+                                <>
                  <ul className="lg:flex gap-10 text-white sm:max-w-[600px] hidden">
                         <li>
                             <Link to='/'>
@@ -120,23 +119,22 @@ export const Header = () => {
                         </li>
                     </ul>
 
-                    <form onSubmit={movieSearch} className="flex gap-2">
+                    <div className="flex gap-2">
                     <input type="search" placeholder="Pesquise por filmes..."
-                    className="bg-white rounded p-1 text-black outline-none placeholder:text-gray-600"
+                    className="bg-white rounded p-1 outline-none"
                     value={input}
                     onChange={ (e) => setInput(e.target.value)}
                     />
-                    <button type="submit">
+                    <button onClick={movieSearch}>
                         <FaSearch color="#fff"/>
                     </button>
-                    </form>
+                    </div>
 
                     <Link to='/favoritos'>
                         <button className="cursor-pointer bg-green-500 p-1 rounded-md text-white font-bold">Meus Filmes</button>
                     </Link>
                 </>
                )}
-          
         </header>
     )
 }

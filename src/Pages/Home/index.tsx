@@ -77,7 +77,7 @@ export const Home = () => {
                         key={filme.id}
                     >
                       <Link to={`/detalhesfilme/${filme.id}`} className="w-full flex justify-center">
-                        <article className="group relative flex flex-col  rounded-lg overflow-hidden transition-transform w-full max-w-xs lg:h-[500px] h-400px hover:scale-105 "
+                        <article className="group relative flex flex-col  rounded-lg overflow-hidden transition-transform w-full max-w-xs lg:h-[500px] h-[400px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
@@ -85,12 +85,12 @@ export const Home = () => {
                                 className='w-full h-80 lg:h-100 object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30'
                             />
 
-                            <div className="absolute bottom-20 lg:bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
+                            <div className="absolute bottom-30 lg:bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end px-4">
 
                                 <h1 className="text-lg text-white font-medium px-4 ">
                                     {filme.title}
                                 </h1>
-                                <p className="text-gray-300 line-clamp-4 overflow-hidden mx-5">
+                                <p className="text-gray-300 line-clamp-4 overflow-hidden">
                                  {filme.overview}
                                 </p>
                                 
@@ -121,7 +121,7 @@ export const Home = () => {
                         
                     >
         
-                        <article className="group flex flex-col rounded-lg overflow-hidden transition-transform w-full max-w-xs lg:h-[500px] h-400px hover:scale-105 "
+                        <article className="group flex flex-col rounded-lg overflow-hidden transition-transform w-full max-w-xs lg:h-[500px] h-[400px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${emAlta.poster_path}`}
@@ -129,7 +129,7 @@ export const Home = () => {
                                 className='w-full h-80 lg:h-100 object-cover flex rounded-t-lg transition duration-300 group-hover:brightness-30'
                             />
 
-                            <div className="absolute bottom-20 lg:bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
+                            <div className="absolute bottom-30 lg:bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
 
                                 <h1 className="text-lg text-white font-medium px-4 ">
                                     {emAlta.title}

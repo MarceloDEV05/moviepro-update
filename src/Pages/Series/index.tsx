@@ -74,18 +74,18 @@ export const Series = () => {
 
 
     return(
-        <div className="mt-30 w-full">
+        <div className="mt-30">
             <h1 className="mt-10 ml-10 font-medium text-3xl">
                 Series Populares
             </h1>
             <main className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-3 p-2">
                 {series.map((serie) => (
-                <Link to={`/detalhesserie/${serie.id}`} key={serie.id}>
+                <Link to={`/detalhesserie/${serie.id}`}>
                     <section className="w-full pt-2 flex items-center justify-center"
-                        
+                        key={serie.id}
                     >
 
-                        <article className="group flex flex-col rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] lg:h-[500px] hover:scale-105 "
+                        <article className="group flex flex-col bg-gray-800 rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] lg:h-[500px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`}
@@ -95,18 +95,18 @@ export const Series = () => {
 
                             <div className="absolute bottom-35 bg-opacity-60 opacity-0 group-hover:opacity-100 translate-y-8 duration-300 flex flex-col justify-end">
 
-                                <h1 className="text-lg text-white font-medium px-4 truncate ">
+                                <h1 className="text-lg text-white font-medium px-4 ">
                                     {serie.name}
                                 </h1>
-                                <p className="text-gray-300 line-clamp-4 overflow-hidden mx-5">
+                                <p className="text-gray-300 line-clamp-4 overflow-hidden px-4">
                                  {serie.overview}
                                 </p>
                                 
                             </div>
 
-                            <div className="cursor-pointer bg-green-500 hover:bg-green-700  text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
-                               <h2 className="text-center">Acessar</h2>
-                            </div>
+                            <button className="cursor-pointer bg-gray-900 hover:bg-gray-950 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
+                                Acessar
+                            </button>
                         </article>
                     </section>
                     </Link>
@@ -123,12 +123,12 @@ export const Series = () => {
             </h1>
             <main className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-3 p-2">
                 {seriesAlta.map((serie) => (
-                    <Link to={`/detalhesserie/${serie.id}`} key={serie.id}>
+                    <Link to={`/detalhesserie/${serie.id}`}>
                     <section className="w-full pt-2 flex items-center justify-center"
                         key={serie.id}
                     >
 
-                        <article className="group flex flex-col rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] hover:scale-105 "
+                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`}
@@ -147,9 +147,9 @@ export const Series = () => {
                                 
                             </div>
 
-                            <div className="cursor-pointer bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
-                               <h2 className="text-center">Acessar</h2>
-                            </div>
+                            <button className="cursor-pointer bg-gray-800 hover:bg-gray-950 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
+                                Acessar
+                            </button>
                         </article>
                     </section>
                     </Link>

@@ -45,7 +45,7 @@ export const Favoritos = () => {
                             <p className="text-gray-3000 line-clamp-3 overflow-hidden w-[300px] lg:w-[600px]  italic">{movieList.overview}</p>
                         </div>
 
-                        <button onClick={() => deleteMovie(movieList.id)} className="bg-gray-800 text-white p-2 rounded w-20">excluir</button>
+                        <button onClick={() => deleteMovie(movieList.id)} className="bg-gray-950 text-white p-2 rounded w-20">excluir</button>
                        </section>
                     </li>
                 ))}
