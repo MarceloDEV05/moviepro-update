@@ -55,9 +55,9 @@ export const Filmes = () => {
   
 
     return(
-        <div className="mt-30 flex flex-col justify-center items-center">
+        <div className="mt-30 flex w-full flex-col justify-center items-center">
            {movie && movie.length > 0 && (
-                <div className="mt-30">
+                <div className="mt-3">
                     <h1 className="px-8 font-medium text-2xl italic">Resultados da Busca</h1>
                     <main className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full  lg:min-h-screen gap-3 p-2">
                     {movie.map((filme) => (
@@ -66,7 +66,7 @@ export const Filmes = () => {
                         
                     >
         
-                        <article className="group flex flex-col rounded-lg overflow-hidden transition-transform w-full max-w-xs lg:h-[500px] h-[400px] hover:scale-105 "
+                        <article className="group flex flex-col rounded-lg overflow-hidden transition-transform w-full  lg:h-[500px] h-[400px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}

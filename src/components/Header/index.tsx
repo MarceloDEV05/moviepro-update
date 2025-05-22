@@ -71,7 +71,7 @@ export const Header = () => {
                     {mobile? (
                 <div ref={menuRef} className="flex w-full gap-2 items-center">
 
-                  <button onClick={openMenu}  className="absolute cursor-pointer text-white right-0">
+                  <button onClick={openMenu}  className="absolute cursor-pointer text-white right-5">
                     <FaBars/>
                   </button>
 
