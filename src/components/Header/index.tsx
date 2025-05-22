@@ -24,7 +24,7 @@ export const Header = () => {
     }
 
     useEffect(() => {
-        const screenMobile = window.matchMedia('(max-width: 600px)');
+        const screenMobile = window.matchMedia('(max-width: 640px)');
         setMobile(screenMobile.matches);
 
         const handler = (e: {matches:boolean}) => setMobile(e.matches)
@@ -50,8 +50,8 @@ export const Header = () => {
 
     return(
         <header 
-        className="fixed w-full h-16 top-0 z-50 text-black bg-gray-900 flex justify-between      md:justify-around items-center px-4 gap-10">
-              <h1 className="text-3xl text-white">
+        className="fixed w-full h-16 top-0 z-50 text-black bg-gray-900 flex justify-between      md:justify-around items-center px-4 gap-5">
+              <h1 className="text-2xl text-white">
                 <Link to='/'>
                 Movie<strong className="text-green-500">PRO</strong>
                 </Link>
@@ -59,7 +59,7 @@ export const Header = () => {
 
                   <form onSubmit={movieSearch} className="flex gap-2 items-center">
                     <input type="search" placeholder="Pesquise por filmes..."
-                    className="bg-white rounded p-1 w-43 outline-none overflow-ellipsis transition-all placeholder:text-gray-700"
+                    className="bg-white rounded p-1 w-32 outline-none overflow-hidden transition-all placeholder:text-gray-700"
                     value={input}
                     onChange={ (e) => setInput(e.target.value)}
                     />
