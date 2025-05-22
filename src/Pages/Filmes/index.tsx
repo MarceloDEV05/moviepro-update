@@ -55,7 +55,7 @@ export const Filmes = () => {
   
 
     return(
-        <div className="mt-30">
+        <div className="mt-30 flex flex-col justify-center items-center">
            {movie && movie.length > 0 && (
                 <div className="mt-30">
                     <h1 className="px-8 font-medium text-2xl italic">Resultados da Busca</h1>

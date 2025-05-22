@@ -24,7 +24,7 @@ export const Header = () => {
     }
 
     useEffect(() => {
-        const screenMobile = window.matchMedia('(max-width: 640px)');
+        const screenMobile = window.matchMedia('(max-width: 600px)');
         setMobile(screenMobile.matches);
 
         const handler = (e: {matches:boolean}) => setMobile(e.matches)
@@ -50,17 +50,14 @@ export const Header = () => {
 
     return(
         <header 
-        className="flex p-4 gap-9 top-0 w-full h-16 bg-gray-900 lg:justify-around justify-between items-center fixed z-50">
+        className="fixed w-full h-16 top-0 z-50 text-black bg-gray-900 flex justify-between      md:justify-around items-center px-4 gap-10">
               <h1 className="text-3xl text-white">
                 <Link to='/'>
                 Movie<strong className="text-green-500">PRO</strong>
                 </Link>
                 </h1>
 
-                    {mobile? (
-                <div ref={menuRef} className="flex w-full gap-2 items-center">
-
-                    <form onSubmit={movieSearch} className="flex w-full gap-2 items-center">
+                  <form onSubmit={movieSearch} className="flex gap-2 items-center">
                     <input type="search" placeholder="Pesquise por filmes..."
                     className="bg-white rounded p-1 w-43 outline-none overflow-ellipsis transition-all placeholder:text-gray-700"
                     value={input}
@@ -70,6 +67,9 @@ export const Header = () => {
                         <FaSearch color="#fff"/>
                     </button>
                     </form>
+
+                    {mobile? (
+                <div ref={menuRef} className="flex w-full gap-2 items-center">
 
                   <button onClick={openMenu}  className=" cursor-pointer text-white float-right">
                     <FaBars/>
@@ -102,7 +102,7 @@ export const Header = () => {
                  )}
                   </div>
                ):(
-                                <>
+                <>
                  <ul className="lg:flex gap-10 text-white sm:max-w-[600px] hidden">
                         <li>
                             <Link to='/'>
@@ -119,19 +119,9 @@ export const Header = () => {
                         </li>
                     </ul>
 
-                    <div className="flex gap-2">
-                    <input type="search" placeholder="Pesquise por filmes..."
-                    className="bg-white rounded p-1 outline-none"
-                    value={input}
-                    onChange={ (e) => setInput(e.target.value)}
-                    />
-                    <button onClick={movieSearch}>
-                        <FaSearch color="#fff"/>
-                    </button>
-                    </div>
-
                     <Link to='/favoritos'>
-                        <button className="cursor-pointer bg-green-500 p-1 rounded-md text-white font-bold">Meus Filmes</button>
+                        <button className="cursor-pointer bg-green-500 p-1 rounded text-white font-bold">Meus Filmes
+                        </button>
                     </Link>
                 </>
                )}

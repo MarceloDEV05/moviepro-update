@@ -74,8 +74,8 @@ export const Series = () => {
 
 
     return(
-        <div className="mt-30">
-            <h1 className="mt-10 ml-10 font-medium text-3xl">
+        <div className="mt-30 flex flex-col justify-center items-center w-full">
+            <h1 className=" mb-10 font-medium text-3xl">
                 Series Populares
             </h1>
             <main className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-3 p-2">
@@ -114,11 +114,11 @@ export const Series = () => {
             </main>
             <button
              onClick={loadMore}
-             className="bg-green-500 hover:bg-green-700 font-bold text-white p-2 rounded-lg float-right mr-20 mb-10">Carregar mais...</button>
+             className="bg-green-500 rounded hover:bg-green-700 flex p-2 justify-center items-center ">Carregar mais...</button>
 
 
 
-            <h1 className="mt-20 ml-10 font-medium text-3xl">
+            <h1 className="mt-20 mb-10 font-medium text-3xl">
                 Series em Alta
             </h1>
             <main className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 w-full min-h-screen gap-3 p-2">
@@ -128,7 +128,7 @@ export const Series = () => {
                         key={serie.id}
                     >
 
-                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] hover:scale-105 "
+                        <article className="group flex flex-col bg-gray-800 rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`}
@@ -147,7 +147,7 @@ export const Series = () => {
                                 
                             </div>
 
-                            <button className="cursor-pointer bg-gray-800 hover:bg-gray-950 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
+                            <button className="cursor-pointer bg-gray-900 hover:bg-gray-950 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
                                 Acessar
                             </button>
                         </article>
