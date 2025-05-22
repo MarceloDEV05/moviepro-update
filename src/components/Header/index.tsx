@@ -61,7 +61,7 @@ export const Header = () => {
 
                     <form onSubmit={movieSearch} className="flex gap-2 items-center px-4">
                     <input type="search" placeholder="Pesquise por filmes..."
-                    className="bg-white rounded p-1 outline-none max-w-md px-4 overflow-ellipsis transition-all text-black lg:w-90 placeholder:text-gray-600"
+                    className="bg-white rounded p-1 outline-none w-30 px-4 overflow-ellipsis transition-all text-black lg:w-90 placeholder:text-gray-600"
                     value={input}
                     onChange={ (e) => setInput(e.target.value)}
                     />
