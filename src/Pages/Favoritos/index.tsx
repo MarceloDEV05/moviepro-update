@@ -23,7 +23,7 @@ export const Favoritos = () => {
     }
 
     return(
-        <div>
+        <div className="mt-30">
             <h1 className="text-2xl text-center font-medium mt-10">Meus Filmes</h1>
             {savedMovies.length === 0 && (
                 <>
@@ -42,7 +42,7 @@ export const Favoritos = () => {
 
                         <div>
                             <h1 className="font-medium text-2xl">{movieList.title}</h1>
-                            <p className="text-gray-700 line-clamp-3 overflow-hidden w-[300px] lg:w-[600px]  italic">{movieList.overview}</p>
+                            <p className="text-gray-3000 line-clamp-3 overflow-hidden w-[300px] lg:w-[600px]  italic">{movieList.overview}</p>
                         </div>
 
                         <button onClick={() => deleteMovie(movieList.id)} className="bg-gray-800 text-white p-2 rounded w-20">excluir</button>

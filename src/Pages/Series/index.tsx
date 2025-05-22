@@ -85,7 +85,7 @@ export const Series = () => {
                         
                     >
 
-                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] lg:h-[500px] hover:scale-105 "
+                        <article className="group flex flex-col rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] lg:h-[500px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`}
@@ -104,7 +104,7 @@ export const Series = () => {
                                 
                             </div>
 
-                            <div className="cursor-pointer bg-gray-800 hover:bg-gray-950 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
+                            <div className="cursor-pointer bg-green-500 hover:bg-green-700  text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
                                <h2 className="text-center">Acessar</h2>
                             </div>
                         </article>
@@ -128,7 +128,7 @@ export const Series = () => {
                         key={serie.id}
                     >
 
-                        <article className="group flex flex-col bg-white rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] hover:scale-105 "
+                        <article className="group flex flex-col rounded-lg overflow-hidden transition-transform w-full max-w-xs h-[400px] hover:scale-105 "
                         >
                             <img
                                 src={`https://image.tmdb.org/t/p/original/${serie.poster_path}`}
@@ -147,7 +147,7 @@ export const Series = () => {
                                 
                             </div>
 
-                            <div className="cursor-pointer bg-gray-800 hover:bg-gray-950 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
+                            <div className="cursor-pointer bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-b-lg transition-colors">
                                <h2 className="text-center">Acessar</h2>
                             </div>
                         </article>

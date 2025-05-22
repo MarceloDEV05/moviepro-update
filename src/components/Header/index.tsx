@@ -50,7 +50,7 @@ export const Header = () => {
 
     return(
         <header 
-        className="w-full h-16 px-4 justify-between  items-center flex bg-gray-700 lg:justify-around fixed top-0 left-0 z-50">
+        className="w-full h-16 px-4 justify-between  items-center flex bg-gray-900 lg:justify-around fixed top-0 left-0 z-50">
             <h1 className="text-3xl text-white">
                 <Link to='/'>
                 Movie<strong className="text-green-500">PRO</strong>
@@ -61,7 +61,7 @@ export const Header = () => {
 
                     <form onSubmit={movieSearch} className="flex gap-2 items-center px-4">
                     <input type="search" placeholder="Pesquise por filmes..."
-                    className="bg-white rounded p-1 outline-none w-full max-w-md px-4 overflow-ellipsis transition-all lg:w-90"
+                    className="bg-white rounded p-1 outline-none w-full max-w-md px-4 overflow-ellipsis transition-all text-black lg:w-90 placeholder:text-gray-600"
                     value={input}
                     onChange={ (e) => setInput(e.target.value)}
                     />
@@ -122,7 +122,7 @@ export const Header = () => {
 
                     <form onSubmit={movieSearch} className="flex gap-2">
                     <input type="search" placeholder="Pesquise por filmes..."
-                    className="bg-white rounded p-1 outline-none"
+                    className="bg-white rounded p-1 text-black outline-none placeholder:text-gray-600"
                     value={input}
                     onChange={ (e) => setInput(e.target.value)}
                     />
