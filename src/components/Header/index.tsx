@@ -50,7 +50,7 @@ export const Header = () => {
 
     return(
         <header 
-        className="w-full h-16 px-4 justify-between  items-center flex bg-gray-900 lg:justify-around fixed top-0 left-0 z-50">
+        className="w-full h-16 px-4 justify-between items-center flex bg-gray-900 lg:justify-around fixed top-0 left-0 z-50">
             <h1 className="text-3xl text-white">
                 <Link to='/'>
                 Movie<strong className="text-green-500">PRO</strong>
@@ -77,7 +77,7 @@ export const Header = () => {
                      
 
                  {menu && (
-                     <div className="absolute w-30 right-0 top-16 rounded-b shadow-lg bg-white ease-in-out duration-300 transition  p-2">
+                     <div className="absolute w-30 right-0 top-16 rounded-b shadow-lg bg-white ease-in-out duration-300 transition text-black  p-2">
                     <ul className="cursor-pointer mt-4 pb-2">
                              <li className="mb-5">
                             <Link to='/'>
