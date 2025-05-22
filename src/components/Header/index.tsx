@@ -50,7 +50,7 @@ export const Header = () => {
 
     return(
         <header 
-        className="fixed w-full h-16 top-0 z-50 text-black bg-gray-900 flex justify-between      md:justify-around items-center px-4 gap-5">
+        className="fixed w-full h-16 top-0 left-0 z-50 text-black bg-gray-900 flex justify-between      md:justify-around items-center px-4 gap-5">
               <h1 className="text-2xl text-white">
                 <Link to='/'>
                 Movie<strong className="text-green-500">PRO</strong>
